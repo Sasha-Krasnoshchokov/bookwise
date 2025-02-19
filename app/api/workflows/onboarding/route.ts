@@ -1,8 +1,15 @@
 import { serve } from "@upstash/workflow/nextjs"
 
 type InitialData = {
-  email: string
+  email: string;
+  fullName: string;
 }
+
+// type UserState = "non-active" | "active"
+
+const ONE_DAY_IN_MS = 24 * 60 * 60 * 1000;
+const TREE_DAYS_IN_MS = 3 * ONE_DAY_IN_MS;
+const THIRTY_DAYS_IN_MS = 10 * TREE_DAYS_IN_MS;
 
 export const { POST } = serve<InitialData>(async (context) => {
   const { email } = context.requestPayload

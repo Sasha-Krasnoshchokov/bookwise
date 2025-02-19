@@ -74,9 +74,9 @@ const AuthForm = <T extends FieldValues>({
 				{isSignIn ? 'Welcome back to BookWise' : 'Create your library account'}
 			</h2>
 			<p className='text-light-100'>
-				{isSignIn
-					? 'Please complete all fields and upload a valid university ID to gain access to the library'
-					: 'Access the vast collection of resources, and stay updated'}
+				{!isSignIn
+					? 'Please complete all fields and upload a valid university ID to gain access to the library.'
+					: 'Access the vast collection of resources, and stay updated with latest news.'}
 			</p>
 			<Form {...form}>
 				<form

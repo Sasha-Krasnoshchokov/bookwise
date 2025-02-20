@@ -8,8 +8,8 @@ import { eq } from "drizzle-orm";
 import { headers } from "next/headers";
 import ratelimit from "@/lib/ratelimit";
 import { redirect } from "next/navigation";
-import { workflowClient } from "@/lib/workflow";
-import config from "@/lib/config";
+// import { workflowClient } from "@/lib/workflow";
+// import config from "@/lib/config";
 
 const checkRateLimits = async () => {
   const userIp = (await headers()).get('x-forwarded-for') || '127.0.0.1';
@@ -72,14 +72,14 @@ export const signUp = async (params: AuthCredentials) => {
     // console.log('should send email')
     // const url = `${config.env.apiEndpoint}/api/workflow/onboarding/`
     // console.log(url)
-        await workflowClient.trigger({
-          url: `${config.env.prodApiEndpoint}/api/workflow/onboarding`,
-          // url: `${config.env.apiEndpoint}/api/workflow/onboarding`,
-          body: {
-            email,
-            fullName,
-          },
-        });
+        // await workflowClient.trigger({
+        //   url: `${config.env.prodApiEndpoint}/api/workflow/onboarding`,
+        //   // url: `${config.env.apiEndpoint}/api/workflow/onboarding`,
+        //   body: {
+        //     email,
+        //     fullName,
+        //   },
+        // });
     //     console.log({result});
     await db.insert(users).values({
       fullName,

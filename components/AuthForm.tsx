@@ -28,6 +28,7 @@ import ImageUpload from './ImageUpload';
 import { toast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { emailJsSender } from '@/emailjs';
 
 interface AuthProps<T extends FieldValues> {
 	type: 'SIGN_IN' | 'SIGN_UP';
@@ -54,8 +55,15 @@ const AuthForm = <T extends FieldValues>({
 	const handleSubmit: SubmitHandler<T> = async (data) => {
 		setSigning(true);
 		const result = await onSubmit(data);
-		setSigning(false);
+
 		if (result.success) {
+			if (data.email && data.fullName) {
+				await emailJsSender({
+					message: `Hello, ${data.fullName}!`,
+					recipient: data.email,
+					subject: 'Welcome to the library management system',
+				});
+			}
 			toast({
 				title: 'Success',
 				description: isSignIn
@@ -63,6 +71,7 @@ const AuthForm = <T extends FieldValues>({
 					: 'You have successfully signed up',
 				variant: 'success',
 			});
+			setSigning(false);
 			router.push('/');
 		} else {
 			toast({
@@ -70,6 +79,7 @@ const AuthForm = <T extends FieldValues>({
 				description: result.error ?? 'An error occurred',
 				variant: 'destructive',
 			});
+			setSigning(false);
 		}
 	};
 

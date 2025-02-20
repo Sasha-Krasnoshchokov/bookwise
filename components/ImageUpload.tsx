@@ -41,6 +41,7 @@ const ImageUpload = ({ onFileChange }: { onFileChange: (filePath: string) => voi
 		toast({
 			title: 'Image uploaded successfully',
 			description: `${result.filePath} uploaded successfully!`,
+			variant: 'success',
 		});
 	};
 	const handleSelectFile = () => {

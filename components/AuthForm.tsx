@@ -27,6 +27,7 @@ import { FIELD_NAMES, FIELD_TYPES } from '@/constants';
 import ImageUpload from './ImageUpload';
 import { toast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 interface AuthProps<T extends FieldValues> {
 	type: 'SIGN_IN' | 'SIGN_UP';
@@ -47,8 +48,13 @@ const AuthForm = <T extends FieldValues>({
 	});
 	const router = useRouter();
 
+	const isSignIn = type === 'SIGN_IN';
+	const [signing, setSigning] = useState(false);
+
 	const handleSubmit: SubmitHandler<T> = async (data) => {
+		setSigning(true);
 		const result = await onSubmit(data);
+		setSigning(false);
 		if (result.success) {
 			toast({
 				title: 'Success',
@@ -67,7 +73,6 @@ const AuthForm = <T extends FieldValues>({
 		}
 	};
 
-	const isSignIn = type === 'SIGN_IN';
 	return (
 		<div className='flex flex-col gap-4'>
 			<h2 className='text-2xl font-semibold text-white'>
@@ -110,9 +115,10 @@ const AuthForm = <T extends FieldValues>({
 						/>
 					))}
 					<Button
+						disabled={signing}
 						type='submit'
 						className='form-btn'>
-						{isSignIn ? 'Sign In' : 'Sign Up'}
+						{signing ? 'Signing ...' : isSignIn ? 'Sign In' : 'Sign Up'}
 					</Button>
 				</form>
 			</Form>

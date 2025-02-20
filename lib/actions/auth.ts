@@ -47,6 +47,7 @@ export const signInWithCredentials = async (params: Pick<AuthCredentials, 'email
     };
   }
 }
+
 export const signUp = async (params: AuthCredentials) => {
   const { email, password, fullName, universityId, universityCard } = params;
 
@@ -68,6 +69,18 @@ export const signUp = async (params: AuthCredentials) => {
   const hashedPassword = await hash(password, 10);
 
   try {
+    // console.log('should send email')
+    // const url = `${config.env.apiEndpoint}/api/workflow/onboarding/`
+    // console.log(url)
+        await workflowClient.trigger({
+          url: `${config.env.prodApiEndpoint}/api/workflow/onboarding`,
+          // url: `${config.env.apiEndpoint}/api/workflow/onboarding`,
+          body: {
+            email,
+            fullName,
+          },
+        });
+    //     console.log({result});
     await db.insert(users).values({
       fullName,
       email,
@@ -75,14 +88,6 @@ export const signUp = async (params: AuthCredentials) => {
       universityCard,
       password: hashedPassword,
     });
-
-    await workflowClient.trigger({
-      url: `${config.env.prodApiEndpoint}/api/workflows/onboarding`,
-      body: {
-        email,
-        fullName,
-      },
-    })
 
     await signInWithCredentials({ email, password });
 
@@ -97,4 +102,5 @@ export const signUp = async (params: AuthCredentials) => {
       error: 'Signup error',
     };
   }
+
 };

@@ -1,7 +1,8 @@
-import LogoutDialog from '@/components/header/LogoutDialog';
 import BookList from '@/components/popularBooks/BookList';
 import { sampleBooks } from '@/constants';
-import React from 'react';
+
+// import SendEmail from './SendEmail';
+// import LogoutDialog from '@/components/header/LogoutDialog';
 
 const MyProfile = () => {
 	return (
@@ -9,6 +10,7 @@ const MyProfile = () => {
 			<div className='mb-10 flex justify-center text-light-100'>
 				{/* <LogoutDialog /> */}
 				My profile data
+				{/* <SendEmail /> */}
 			</div>
 			<BookList
 				title='Borrowed Books'

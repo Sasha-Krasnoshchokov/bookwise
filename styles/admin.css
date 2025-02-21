@@ -42,7 +42,7 @@
 
 	/* Book Form */
 	.book-form_input {
-		@apply min-h-12 border border-gray-100 bg-light-600 p-3 text-base font-semibold placeholder:font-normal placeholder:text-slate-500 !important;
+		@apply min-h-12 border border-gray-100 bg-light-600 p-3 text-base font-semibold placeholder:font-normal placeholder:text-slate-500;
 	}
 
 	.book-form_btn {
@@ -134,7 +134,7 @@
 	}
 
 	.hex-input {
-		@apply h-full flex-1 bg-transparent font-ibm-plex-sans outline-none;
+		@apply flex-1 bg-transparent font-ibm-plex-sans outline-none rounded-md pl-6 pb-[196px] h-[232px];
 	}
 
 	.hex-color-picker {

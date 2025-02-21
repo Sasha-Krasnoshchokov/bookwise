@@ -1,7 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
+import { Control, useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import {
@@ -17,6 +17,8 @@ import { bookSchema } from '@/lib/validation';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import FileUpload from '@/components/FileUpload';
+import ColorPicker from '@/components/admin/ColorPicker';
+import { Regex } from 'lucide-react';
 
 const defaultValues: z.infer<typeof bookSchema> = {
 	title: '',
@@ -40,20 +42,38 @@ const BookForm = ({ type, ...book }: BookFormProps) => {
 		defaultValues,
 	});
 
-	const handleSubmit = async (data: z.infer<typeof bookSchema>) => {};
+	const handleSubmit = async (data: z.infer<typeof bookSchema>) => {
+		console.log({ data });
+	};
 
 	const renderFormField = ({
+		control,
 		fieldName,
 		label,
 		placeholder,
 	}: {
+		control: Control<
+			{
+				title: string;
+				description: string;
+				author: string;
+				genre: string;
+				rating: number;
+				totalCopies: number;
+				coverUrl: string;
+				videoUrl: string;
+				coverColor: string;
+				summary: string;
+			},
+			any
+		>;
 		fieldName: any;
 		label: string;
 		placeholder: string;
 	}) => {
 		return (
 			<FormField
-				control={form.control}
+				control={control}
 				name={fieldName}
 				render={({ field }) => (
 					<FormItem className='flex flex-col gap-1'>
@@ -82,26 +102,31 @@ const BookForm = ({ type, ...book }: BookFormProps) => {
 				onSubmit={form.handleSubmit(handleSubmit)}
 				className='space-y-8'>
 				{renderFormField({
+					control: form.control,
 					fieldName: 'title',
 					label: 'Book Title',
 					placeholder: 'Enter the book title',
 				})}
 				{renderFormField({
+					control: form.control,
 					fieldName: 'author',
 					label: 'Author',
 					placeholder: 'Enter the book author',
 				})}
 				{renderFormField({
+					control: form.control,
 					fieldName: 'genre',
 					label: 'Genre',
 					placeholder: 'Enter the book genre',
 				})}
 				{renderFormField({
+					control: form.control,
 					fieldName: 'rating',
 					label: 'Rating',
 					placeholder: 'Enter the book rating',
 				})}
 				{renderFormField({
+					control: form.control,
 					fieldName: 'totalCopies',
 					label: 'Total Copies',
 					placeholder: 'Enter the book copies',
@@ -136,12 +161,9 @@ const BookForm = ({ type, ...book }: BookFormProps) => {
 								Book Primary Color
 							</FormLabel>
 							<FormControl>
-								<Input
-									required
-									type='color'
-									placeholder='Select or enter the book primary color'
-									{...field}
-									className='book-form_input'
+								<ColorPicker
+									onPickerChange={field.onChange}
+									value={field.value}
 								/>
 							</FormControl>
 							<FormMessage />
@@ -208,7 +230,6 @@ const BookForm = ({ type, ...book }: BookFormProps) => {
 					)}
 				/>
 				<Button
-					disabled
 					type='submit'
 					className='book-form_btn text-white'>
 					Add Book to Library

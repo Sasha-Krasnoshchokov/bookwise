@@ -2,7 +2,7 @@ import { cn, getInitials } from '@/lib/utils';
 import Link from 'next/link';
 import React from 'react';
 import Logo from './Logo';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Session } from 'next-auth';
 import LogoutDialog from './header/LogoutDialog';
 import NavigationHeader from './header/NavigationHeader';

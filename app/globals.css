@@ -106,11 +106,11 @@ body {
 	}
 
 	.upload-filename {
-		@apply mt-1 text-center text-xs;
+		@apply text-center text-[10px];
 	}
 
 	.progress {
-		@apply rounded-full bg-green-800 p-0.5 text-center font-bebas-neue text-[8px] font-bold leading-none text-light-100;
+		@apply rounded-full bg-light-200 p-0.5 text-center text-[8px] font-bold leading-none text-dark-600;
 	}
 
 	/* Search */
@@ -227,7 +227,7 @@ body {
 	}
 
 	.auth-box {
-		@apply gradient-vertical mx-auto flex max-w-xl flex-col gap-6 rounded-lg p-10 z-10;
+		@apply gradient-vertical mx-auto flex max-w-xl flex-col gap-6 rounded-lg p-4 z-10 sm:p-10;
 	}
 
 	.auth-illustration {

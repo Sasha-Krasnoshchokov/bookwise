@@ -11,7 +11,7 @@ const NewBooks = () => {
 				className='back-btn'>
 				<Link href='/admin/books/'>Go Back</Link>
 			</Button>
-			<section className='mx-auto  w-[50vw]'>
+			<section className='md:mx-auto md:w-[50vw]'>
 				<BookForm />
 			</section>
 		</>

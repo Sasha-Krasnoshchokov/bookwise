@@ -17,6 +17,7 @@ const authenticator = async () => {
 		}
 		const data = await res.json();
 		return data;
+		//@ts-ignore
 	} catch (error: any) {
 		throw new Error(`Authentication failed: ${error.message}.`);
 	}
@@ -50,7 +51,7 @@ const FileUpload = ({
 		placeholder: variant === 'dark' ? 'text-light-100' : 'text-slate-500',
 		text: variant === 'dark' ? 'text-light-100' : 'text-dark-400',
 	};
-
+	//@ts-ignore
 	const onError = (error: any) => {
 		setUploading(false);
 		console.error(error);
@@ -60,6 +61,7 @@ const FileUpload = ({
 			variant: 'destructive',
 		});
 	};
+	//@ts-ignore
 	const onSuccess = (result: any) => {
 		setUploading(false);
 		setFile(result);

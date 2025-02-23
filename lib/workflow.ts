@@ -1,6 +1,6 @@
 import { Client as WorkflowClient } from '@upstash/workflow';
 
-import { Client as QStashClient, resend } from "@upstash/qstash";
+import { Client as QStashClient } from "@upstash/qstash";
 import emailjs from '@emailjs/browser';
 import config from '@/lib/config';
 

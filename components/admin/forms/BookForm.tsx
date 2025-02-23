@@ -18,7 +18,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import FileUpload from '@/components/FileUpload';
 import ColorPicker from '@/components/admin/ColorPicker';
-import { Regex } from 'lucide-react';
+import { createBook } from '@/lib/admin/book';
+import { toast } from '@/hooks/use-toast';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 const defaultValues: z.infer<typeof bookSchema> = {
 	title: '',
@@ -37,13 +40,34 @@ interface BookFormProps extends Partial<SampleBook> {
 }
 
 const BookForm = ({ type, ...book }: BookFormProps) => {
+	const router = useRouter();
+
+	const [submitting, setSubmitting] = useState(false);
+
 	const form = useForm<z.infer<typeof bookSchema>>({
 		resolver: zodResolver(bookSchema),
 		defaultValues,
 	});
 
 	const handleSubmit = async (data: z.infer<typeof bookSchema>) => {
-		console.log({ data });
+		setSubmitting(true);
+		const result = await createBook(data);
+
+		if (result.success) {
+			toast({
+				title: 'Success',
+				description: 'Book created successfully',
+				variant: 'success',
+			});
+			router.push(`/admin/books/${result.data.id}`);
+			setSubmitting(false);
+		} else {
+			toast({
+				title: 'Error',
+				description: result.message,
+				variant: 'destructive',
+			});
+		}
 	};
 
 	const renderFormField = ({
@@ -65,9 +89,9 @@ const BookForm = ({ type, ...book }: BookFormProps) => {
 				coverColor: string;
 				summary: string;
 			},
-			any
+			/*@ts-ignore */ any
 		>;
-		fieldName: any;
+		/*@ts-ignore */ fieldName: any;
 		label: string;
 		placeholder: string;
 	}) => {
@@ -143,27 +167,9 @@ const BookForm = ({ type, ...book }: BookFormProps) => {
 								<Textarea
 									required
 									placeholder='Enter the book description'
-									rows={8}
+									rows={6}
 									{...field}
 									className='book-form_input'
-								/>
-							</FormControl>
-							<FormMessage />
-						</FormItem>
-					)}
-				/>
-				<FormField
-					control={form.control}
-					name='coverColor'
-					render={({ field }) => (
-						<FormItem className='flex flex-col gap-1'>
-							<FormLabel className='text-base font-normal text-dark-500'>
-								Book Primary Color
-							</FormLabel>
-							<FormControl>
-								<ColorPicker
-									onPickerChange={field.onChange}
-									value={field.value}
 								/>
 							</FormControl>
 							<FormMessage />
@@ -212,6 +218,24 @@ const BookForm = ({ type, ...book }: BookFormProps) => {
 				</div>
 				<FormField
 					control={form.control}
+					name='coverColor'
+					render={({ field }) => (
+						<FormItem className='flex flex-col gap-1'>
+							<FormLabel className='text-base font-normal text-dark-500'>
+								Book Primary Color
+							</FormLabel>
+							<FormControl>
+								<ColorPicker
+									onPickerChange={field.onChange}
+									value={field.value}
+								/>
+							</FormControl>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
 					name='summary'
 					render={({ field }) => (
 						<FormItem className='flex flex-col gap-1'>
@@ -230,9 +254,10 @@ const BookForm = ({ type, ...book }: BookFormProps) => {
 					)}
 				/>
 				<Button
+					disabled={submitting}
 					type='submit'
 					className='book-form_btn text-white'>
-					Add Book to Library
+					{submitting ? 'Submitting form ...' : 'Add Book to Library'}
 				</Button>
 			</form>
 		</Form>

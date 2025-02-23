@@ -7,6 +7,7 @@ const imageKit = new ImageKit(config.env.imagekit);
 export async function GET() {
   try {
     return NextResponse.json(imageKit.getAuthenticationParameters());
+    //@ts-ignore
   } catch (error: any) {
     return new Response(error.message, { status: 500 });
   }

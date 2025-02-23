@@ -1,4 +1,17 @@
 
+interface CreateBookParams {
+	title: string;
+	author: string;
+	genre: string;
+	coverUrl: string;
+	videoUrl: string;
+	coverColor: string;
+	description: string;
+	summary: string;
+	rating: number;
+	totalCopies: number;
+}
+
 interface AuthCredentials {
 	email: string;
 	password: string;

@@ -1,6 +1,5 @@
 import React from 'react';
 import BookCard from './BookCard';
-import { cn } from '@/lib/utils';
 
 interface PopularBooksProps {
 	books: SampleBook[];
@@ -8,7 +7,7 @@ interface PopularBooksProps {
 	containerClassName: string;
 }
 
-const isLoanedBook = false;
+// const isLoanedBook = false;
 
 const BookList = ({ title, books, containerClassName }: PopularBooksProps) => {
 	return (

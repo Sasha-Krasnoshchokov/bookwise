@@ -4,7 +4,7 @@ import { Button } from '../ui/button';
 import BookCover from './BookCover';
 
 const BookOverview = ({
-	id,
+	// id,
 	title,
 	author,
 	genre,

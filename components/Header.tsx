@@ -1,4 +1,4 @@
-import { cn, getInitials } from '@/lib/utils';
+import { getInitials } from '@/lib/utils';
 import Link from 'next/link';
 import React from 'react';
 import Logo from './Logo';

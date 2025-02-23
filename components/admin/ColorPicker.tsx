@@ -1,14 +1,10 @@
-import { useState } from 'react';
 import { HexColorInput, HexColorPicker } from 'react-colorful';
-import { Input } from '../ui/input';
 
 interface ColorPickerProps {
 	value?: string;
 	onPickerChange: (color: string) => void;
 }
 const ColorPicker = ({ value, onPickerChange }: ColorPickerProps) => {
-	const [color, setColor] = useState('#aabbcc');
-	const [isOpen, setIsOpen] = useState(false);
 	return (
 		<div className='relative'>
 			<div className='relative flex flex-row items-center mb-3'>

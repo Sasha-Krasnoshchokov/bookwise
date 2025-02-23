@@ -38,6 +38,7 @@ export const signInWithCredentials = async (params: Pick<AuthCredentials, 'email
     return {
       success: true,
     }
+    //@ts-ignore
   } catch (error: any) {
     console.error(error, 'Signup error');
 
@@ -94,6 +95,7 @@ export const signUp = async (params: AuthCredentials) => {
     return {
       success: true,
     };
+    //@ts-ignore
   } catch (error: any) {
     console.error(error, 'Signup error');
 

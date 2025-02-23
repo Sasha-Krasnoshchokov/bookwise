@@ -4,7 +4,8 @@ import BookCover from '../bookOverview/BookCover';
 import Image from 'next/image';
 import { Button } from '../ui/button';
 
-const BookCard = ({ id, coverColor, coverUrl, title, genre, isLoanedBook = false }: SampleBook) => {
+const BookCard = ({ id, coverColor, coverUrl, title, genre, totalCopies }: SampleBook) => {
+	const isLoanedBook = totalCopies > 0;
 	return (
 		<li>
 			<Link

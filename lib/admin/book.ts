@@ -3,7 +3,7 @@
 import { db } from "@/database/drizzle";
 import { books } from "@/database/schema";
 
-export const createBook = async (params: CreateBookParams) => {
+export const createBook = async (params: CreateBook) => {
   try {
     const newBook = await db.insert(books).values({
       ...params,

@@ -1,5 +1,5 @@
 
-interface CreateBookParams {
+interface CreateBook {
 	title: string;
 	author: string;
 	genre: string;
@@ -21,7 +21,7 @@ interface AuthCredentials {
 }
 
 interface 	SampleBook {
-	id: number;
+	id: string;
 	title: string;
 	author: string;
 	genre: string;
@@ -33,7 +33,7 @@ interface 	SampleBook {
 	coverUrl: string;
 	videoUrl: string;
 	summary: string;
-	isLoanedBook?: boolean;
+	createdAt: Date | null;
 }
 
 type BookCoverVariant = 'wide' | 'small' | 'extraSmall' | 'medium' | 'regular';

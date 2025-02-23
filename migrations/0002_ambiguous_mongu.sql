@@ -12,6 +12,5 @@ CREATE TABLE "books" (
 	"total_copies" integer DEFAULT 1 NOT NULL,
 	"available_copies" integer DEFAULT 0 NOT NULL,
 	"created_at" timestamp with time zone DEFAULT now() NOT NULL,
-	CONSTRAINT "books_id_unique" UNIQUE("id"),
-	CONSTRAINT "books_rating_unique" UNIQUE("rating")
+	CONSTRAINT "books_id_unique" UNIQUE("id")
 );

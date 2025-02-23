@@ -8,8 +8,6 @@ import { eq } from "drizzle-orm";
 import { headers } from "next/headers";
 import ratelimit from "@/lib/ratelimit";
 import { redirect } from "next/navigation";
-// import { workflowClient } from "@/lib/workflow";
-// import config from "@/lib/config";
 
 const checkRateLimits = async () => {
   const userIp = (await headers()).get('x-forwarded-for') || '127.0.0.1';
@@ -38,8 +36,7 @@ export const signInWithCredentials = async (params: Pick<AuthCredentials, 'email
     return {
       success: true,
     }
-    //@ts-ignore
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error(error, 'Signup error');
 
     return {
@@ -70,18 +67,6 @@ export const signUp = async (params: AuthCredentials) => {
   const hashedPassword = await hash(password, 10);
 
   try {
-    // console.log('should send email')
-    // const url = `${config.env.apiEndpoint}/api/workflow/onboarding/`
-    // console.log(url)
-        // await workflowClient.trigger({
-        //   url: `${config.env.prodApiEndpoint}/api/workflow/onboarding`,
-        //   // url: `${config.env.apiEndpoint}/api/workflow/onboarding`,
-        //   body: {
-        //     email,
-        //     fullName,
-        //   },
-        // });
-    //     console.log({result});
     await db.insert(users).values({
       fullName,
       email,
@@ -95,8 +80,7 @@ export const signUp = async (params: AuthCredentials) => {
     return {
       success: true,
     };
-    //@ts-ignore
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error(error, 'Signup error');
 
     return {

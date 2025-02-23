@@ -30,7 +30,7 @@ export const books = pgTable("books", {
   videoUrl: text('video_url').notNull(),
   description: text('description').notNull(),
   summary: text('summary').notNull(),
-  rating: integer('rating').notNull().unique(),
+  rating: integer('rating').notNull(),
   totalCopies: integer('total_copies').notNull().default(1),
   availableCopies: integer('available_copies').notNull().default(0),
   createdAt: timestamp('created_at', {

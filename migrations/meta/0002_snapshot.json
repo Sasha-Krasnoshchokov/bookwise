@@ -1,5 +1,5 @@
 {
-  "id": "61664f5e-5c64-467b-8c36-09dc9f03686b",
+  "id": "524f317e-5fbd-4313-ae9b-310b98f252de",
   "prevId": "9468be9f-04f8-4283-9120-3527f0e4d4a1",
   "version": "7",
   "dialect": "postgresql",
@@ -100,13 +100,6 @@
           "nullsNotDistinct": false,
           "columns": [
             "id"
-          ]
-        },
-        "books_rating_unique": {
-          "name": "books_rating_unique",
-          "nullsNotDistinct": false,
-          "columns": [
-            "rating"
           ]
         }
       },

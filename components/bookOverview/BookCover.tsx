@@ -40,8 +40,7 @@ const BookCover = ({
 					fill
 					className='rounded-sm object-fill'
 					sizes='(max-width: 768px) auto, 33vw'
-					loading='lazy'
-					lqip={{ active: true }}
+					loading='eager'
 				/>
 			</div>
 		</div>

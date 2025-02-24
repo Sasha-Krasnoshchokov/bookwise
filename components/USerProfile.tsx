@@ -11,16 +11,16 @@ const UserProfile = async ({ user }: { user: IUser }) => {
 				className='user-profile-card-frame'
 				fill
 			/>
-			<div className='relative mt-[50px] flex flex-1 w-full gap-8 h-[100px]'>
+			<div className='relative mt-[60px] flex flex-1 w-full lg:gap-8 gap-4 h-[100px]'>
 				<div className='absolute top-[-12px] left-[-12px] w-[124px] h-[124px] rounded-full bg-[#333c5c51]' />
 				<Image
 					src='/icons/user-fill.svg'
 					alt='user avatar'
 					width={100}
 					height={100}
-					className='object-contain rounded-full z-10'
+					className='object-contain rounded-full z-10 min-w-[100px] min-h-[100px]'
 				/>
-				<div className='flex flex-col justify-between gap-2 h-[100px]'>
+				<div className='flex flex-col justify-between gap-2 h-[100px] w-full '>
 					<div className='flex items-center gap-1'>
 						<VerifiedIcon fill={isVerified ? '#FFE1BD' : '#FF6C6F'} />
 						<p
@@ -30,7 +30,7 @@ const UserProfile = async ({ user }: { user: IUser }) => {
 						</p>
 					</div>
 					<p className='text-2xl font-semibold text-white'>{user.fullName.split(' ')[0]}</p>
-					<p className='text-sm text-light-100'>{user.email}</p>
+					<p className='text-md text-light-100 break-all'>{user.email}</p>
 				</div>
 			</div>
 			<div className='flex flex-col gap-8 w-full'>

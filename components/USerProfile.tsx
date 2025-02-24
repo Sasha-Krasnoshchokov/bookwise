@@ -26,7 +26,7 @@ const UserProfile = async ({ user }: { user: IUser }) => {
 						<p
 							className={`text-sm`}
 							style={{ color: isVerified ? '#D6E0FF' : '#FF6C6F' }}>
-							Verified Student
+							{isVerified ? 'Verified Student' : 'Unverified Student'}
 						</p>
 					</div>
 					<p className='text-2xl font-semibold text-white'>{user.fullName.split(' ')[0]}</p>

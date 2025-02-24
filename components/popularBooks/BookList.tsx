@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import BookCard from './BookCard';
 
 interface PopularBooksProps {
 	books: SampleBook[];
-	title: string;
+	title: ReactNode;
 	containerClassName?: string;
 }
 

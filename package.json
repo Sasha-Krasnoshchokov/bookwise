@@ -33,6 +33,7 @@
 		"emailjs-com": "^3.2.0",
 		"eslint-plugin-prettier": "^5.2.3",
 		"eslint-plugin-tailwindcss": "^3.18.0",
+		"hex-to-rgba": "^2.0.1",
 		"imagekit": "^6.0.0",
 		"imagekitio-next": "^1.0.1",
 		"lucide-react": "^0.475.0",

@@ -7,9 +7,21 @@ import dayjs from "dayjs";
 
 export const borrowBook = async ({ bookId, userId } : IBorrowBookParams) => {
   try {
+    const [borrowedBook] = await db
+      .select()
+      .from(borrowRecords)
+      .where(eq(borrowRecords.bookId, bookId))
+      .limit(1);
+
+    if (borrowedBook) {
+      return {
+        success: false,
+        message: 'Book is already borrowed'
+      };
+    }
     const [book] = await db.select().from(books).where(eq(books.id, bookId)).limit(1);
 
-    if (!book || book.availableCopies === 0) { 
+    if (!book || book.availableCopies === 0) {
       return {
         success: false,
         message: 'Book is not available for borrowing'

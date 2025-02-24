@@ -46,6 +46,9 @@ const BorrowBookButton = ({
 					description: resp.message,
 					variant: 'destructive',
 				});
+				if (resp.message === 'Book is already borrowed') {
+					router.push('/my-profile');
+				}
 			}
 		} catch (error) {
 			console.error(error);

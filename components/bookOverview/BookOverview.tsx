@@ -57,16 +57,16 @@ const BookOverview = async ({
 					</div>
 
 					<p className='book-description'>{description}</p>
-					{!availableCopies ? (
-						'Book is not available'
-					) : (
-						<BorrowBookButton
-							bookId={id}
-							userId={userId}
-							isEligible={user?.status === 'APPROVED'}
-						/>
-					)}
 				</div>
+				{!availableCopies ? (
+					'Book is not available'
+				) : (
+					<BorrowBookButton
+						bookId={id}
+						userId={userId}
+						isEligible={user?.status === 'APPROVED'}
+					/>
+				)}
 			</div>
 
 			<div className='relative flex flex-1 justify-center'>

@@ -97,7 +97,7 @@ body {
 	}
 
 	.book-overview_btn {
-		@apply mt-4 min-h-14 w-fit bg-primary text-dark-100 hover:bg-primary/90 max-md:w-full !important;
+		@apply min-h-14 w-fit bg-primary text-dark-100 hover:bg-primary/90 max-md:w-full !important;
 	}
 
 	/* File Upload */
@@ -201,6 +201,20 @@ body {
 
 	.select-item {
 		@apply focus:bg-dark-600 focus:text-light-100 !important;
+	}
+
+	/* User profile */
+	.user-profile-card {
+		@apply relative flex flex-col gap-8 items-center gradient-blue text-light-100 rounded-lg lg:p-10 p-5 z-10 flex-1 h-fit min-w-80;
+	}
+	.user-profile-card-frame {
+		@apply absolute top-[-16] left-[50%] translate-x-[-50%] w-[60px] h-[88px] !important;
+	}
+	.user-profile-card-text_secondary {
+		@apply mb-2 text-light-100 font-ibm-plex-sans text-lg;
+	}
+	.user-profile-card-text_primary {
+		@apply text-white font-ibm-plex-sans text-xl font-semibold;
 	}
 }
 

@@ -40,6 +40,19 @@ interface 	SampleBook {
 	createdAt: Date | null;
 }
 
+interface IUser {
+	id: string;
+	fullName: string;
+	email: string;
+	universityId: number;
+	universityCard: string;
+	password: string;
+	status: TUserStatus;
+	role: TUserRole;
+	lastActivityDate: string;
+	createdAt: Date;
+}
+
 type BookCoverVariant = 'wide' | 'small' | 'extraSmall' | 'medium' | 'regular';
 type TFieldNames = 
 | 'rating'
@@ -51,4 +64,7 @@ type TFieldNames =
 | 'coverUrl'
 | 'videoUrl'
 | 'coverColor'
-| 'summary';
+	| 'summary';
+
+type TUserStatus = 'PENDING' | 'APPROVED' | 'REJECTED' | null;
+type TUserRole = 'USER' | 'ADMIN' | null;

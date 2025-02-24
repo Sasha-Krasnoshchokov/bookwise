@@ -10,8 +10,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   session: { strategy: 'jwt'},
   providers: [
     CredentialsProvider({
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       async authorize(credentials: any) {
-        if (!credentials?.email || !credentials?.password) null
+        if (!credentials?.email || !credentials?.password) return null;
         
         const currentUser = await db.select().from(users).where(eq(users.email, credentials.email.toString())).limit(1); 
 

@@ -49,7 +49,7 @@ const BookProfile = async ({ params }: { params: Promise<{ id: string }> }) => {
 					<section className='mt-10 flex flex-col gap-7'>
 						<h3>Summary</h3>
 						<div className='space-y-5 text-xl text-light-100'>
-							{currentBook.summary.split('\n').map((text, i) => (
+							{currentBook.summary.split('\\n').map((text, i) => (
 								<p key={i}>{text}</p>
 							))}
 						</div>

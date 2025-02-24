@@ -39,6 +39,9 @@ const MyProfile = async () => {
 				<p className='user-profile-card-text_primary'>Borrowed Books</p>
 
 				<ul className='flex flex-row flex-wrap justify-between gap-4'>
+					{!list.length && (
+						<p className='text-light-200 font-bebas-neue text-xl'>No borrowed books yet</p>
+					)}
 					{list.map((book) => (
 						<BorrowedBookCard
 							key={book.id}

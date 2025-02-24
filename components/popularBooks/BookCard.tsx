@@ -10,7 +10,7 @@ const BookCard = ({ id, coverColor, coverUrl, title, genre, totalCopies }: Sampl
 		<li className='flex flex-col w-60'>
 			<Link
 				href={`/books/${id}`}
-				className='flex flex-col'>
+				className='flex flex-col rounded-sm hover:shadow-md hover:shadow-slate-300 transition-all'>
 				<BookCover
 					coverColor={coverColor}
 					coverImage={coverUrl}

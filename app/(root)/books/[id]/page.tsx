@@ -1,3 +1,4 @@
+import BackToHomePage from '@/components/BackToHomePage';
 import BookOverview from '@/components/bookOverview/BookOverview';
 import BookList from '@/components/popularBooks/BookList';
 import { db } from '@/database/drizzle';
@@ -30,6 +31,7 @@ const BookProfile = async ({ params }: { params: Promise<{ id: string }> }) => {
 	return (
 		<>
 			<BookOverview {...currentBook} />
+			<BackToHomePage />
 			<div className='book-details'>
 				<div className='flex-[1.5]'>
 					<section className='flex flex-col gap-7'>

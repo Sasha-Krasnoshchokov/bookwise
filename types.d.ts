@@ -1,4 +1,8 @@
 
+interface IBorrowBookParams {
+	bookId: string;
+	userId: string;
+}
 interface CreateBook {
 	title: string;
 	author: string;

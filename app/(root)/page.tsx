@@ -1,13 +1,13 @@
 import BookList from '@/components/popularBooks/BookList';
 import BookOverview from '@/components/bookOverview/BookOverview';
 
-// import { auth } from '@/authjs';
+import { auth } from '@/authjs';
 import { db } from '@/database/drizzle';
 import { books } from '@/database/schema';
 import { desc } from 'drizzle-orm';
 
 const Home = async () => {
-	// const session = await auth();
+	const session = await auth();
 	const latestBooks = (await db
 		.select()
 		.from(books)
@@ -18,7 +18,7 @@ const Home = async () => {
 		<>
 			<BookOverview
 				{...latestBooks[0]}
-				// userId={session?.user?.id as string}
+				userId={session?.user?.id as string}
 			/>
 			<BookList
 				title='Latest Books'

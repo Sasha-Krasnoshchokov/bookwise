@@ -8,12 +8,12 @@ const NavigationHeader = () => {
 	const patheName = usePathname();
 	return (
 		<Link
-			href='/library'
+			href='/'
 			className={cn(
-				'text-base cursor-pointer capitalize',
-				patheName === '/library' ? 'text-light-100' : 'text-light-200'
+				'text-base cursor-pointer capitalize hover:text-light-200 transition-all duration-200',
+				patheName === '/' ? 'text-light-200' : 'text-light-100'
 			)}>
-			Library
+			Home
 		</Link>
 	);
 };

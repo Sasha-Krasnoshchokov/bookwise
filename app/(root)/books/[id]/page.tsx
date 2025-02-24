@@ -1,4 +1,3 @@
-import BackToHomePage from '@/components/BackToHomePage';
 import BookOverview from '@/components/bookOverview/BookOverview';
 import BookList from '@/components/popularBooks/BookList';
 import { db } from '@/database/drizzle';
@@ -6,9 +5,12 @@ import { books } from '@/database/schema';
 import config from '@/lib/config';
 import { eq, not } from 'drizzle-orm';
 import { redirect } from 'next/navigation';
-import React from 'react';
+
+import { auth } from '@/authjs';
 
 const BookProfile = async ({ params }: { params: Promise<{ id: string }> }) => {
+	const session = await auth();
+
 	const bookId = (await params).id;
 
 	const [currentBook] = await db.select().from(books).where(eq(books.id, bookId)).limit(1);
@@ -30,8 +32,11 @@ const BookProfile = async ({ params }: { params: Promise<{ id: string }> }) => {
 
 	return (
 		<>
-			<BookOverview {...currentBook} />
-			<BackToHomePage />
+			<BookOverview
+				{...currentBook}
+				userId={session?.user?.id as string}
+			/>
+
 			<div className='book-details'>
 				<div className='flex-[1.5]'>
 					<section className='flex flex-col gap-7'>

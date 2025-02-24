@@ -4,12 +4,12 @@ import BookCard from './BookCard';
 interface PopularBooksProps {
 	books: SampleBook[];
 	title: string;
-	containerClassName: string;
+	containerClassName?: string;
 }
 
 // const isLoanedBook = false;
 
-const BookList = ({ title, books, containerClassName }: PopularBooksProps) => {
+const BookList = ({ title, books, containerClassName = '' }: PopularBooksProps) => {
 	if (books.length === 0) {
 		return null;
 	}

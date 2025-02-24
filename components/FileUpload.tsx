@@ -17,9 +17,8 @@ const authenticator = async () => {
 		}
 		const data = await res.json();
 		return data;
-		//@ts-ignore
-	} catch (error: any) {
-		throw new Error(`Authentication failed: ${error.message}.`);
+	} catch (error: unknown) {
+		throw new Error(`Authentication failed: ${error}.`);
 	}
 };
 
@@ -32,6 +31,12 @@ interface FileUploadProps {
 	onFileChange: (filePath: string) => void;
 }
 
+interface FileUploadState {
+	filePath: string;
+	width: number;
+	height: number;
+}
+
 const FileUpload = ({
 	type = 'image',
 	accept = 'image/*',
@@ -42,7 +47,7 @@ const FileUpload = ({
 }: FileUploadProps) => {
 	const ikUploadRef = useRef(null);
 
-	const [file, setFile] = useState<{ filePath: string } | null>(null);
+	const [file, setFile] = useState<FileUploadState | null>(null);
 	const [uploading, setUploading] = useState(false);
 	const [progress, setProgress] = useState(0);
 
@@ -51,8 +56,8 @@ const FileUpload = ({
 		placeholder: variant === 'dark' ? 'text-light-100' : 'text-slate-500',
 		text: variant === 'dark' ? 'text-light-100' : 'text-dark-400',
 	};
-	//@ts-ignore
-	const onError = (error: any) => {
+
+	const onError = (error: unknown) => {
 		setUploading(false);
 		console.error(error);
 		toast({
@@ -61,8 +66,8 @@ const FileUpload = ({
 			variant: 'destructive',
 		});
 	};
-	//@ts-ignore
-	const onSuccess = (result: any) => {
+
+	const onSuccess = (result: FileUploadState) => {
 		setUploading(false);
 		setFile(result);
 		onFileChange(result.filePath);
@@ -75,15 +80,15 @@ const FileUpload = ({
 	const handleSelectFile = () => {
 		setUploading(true);
 	};
-	//@ts-ignore
-	const handleUpload = async (e) => {
+
+	const handleUpload = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		e.preventDefault();
 
 		if (!ikUploadRef.current) return;
 		setFile(null);
 		setProgress(0);
-		//@ts-ignore
-		ikUploadRef.current.click();
+
+		(ikUploadRef.current as HTMLInputElement).click();
 	};
 
 	const validateFileSize = (file: File) => {
@@ -155,9 +160,7 @@ const FileUpload = ({
 					<IKImage
 						path={file.filePath ?? ''}
 						alt='uploaded image or placeholder'
-						//@ts-ignore
 						width={file.width}
-						//@ts-ignore
 						height={file.height}
 						className='object-cover rounded-xl mx-auto'
 					/>

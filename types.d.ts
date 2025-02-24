@@ -37,3 +37,14 @@ interface 	SampleBook {
 }
 
 type BookCoverVariant = 'wide' | 'small' | 'extraSmall' | 'medium' | 'regular';
+type TFieldNames = 
+| 'rating'
+| 'totalCopies'
+| 'title'
+| 'description'
+| 'author'
+| 'genre'
+| 'coverUrl'
+| 'videoUrl'
+| 'coverColor'
+| 'summary';

@@ -110,8 +110,12 @@ export default {
       backgroundImage: {
         pattern: "url('/images/pattern.webp')",
       },
+      boxShadow: {
+        video: "0 0 20px 4px",
+      }
     },
   },
+	// eslint-disable-next-line @typescript-eslint/no-require-imports
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
 

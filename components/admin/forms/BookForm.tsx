@@ -35,11 +35,12 @@ const defaultValues: z.infer<typeof bookSchema> = {
 	coverColor: '',
 	summary: '',
 };
-interface BookFormProps extends Partial<SampleBook> {
-	type?: 'create' | 'update';
-}
+// interface BookFormProps extends Partial<SampleBook> {
+// 	type?: 'create' | 'update';
+// }
 
-const BookForm = ({ type, ...book }: BookFormProps) => {
+// const BookForm = ({ type, ...book }: BookFormProps) => {
+const BookForm = () => {
 	const router = useRouter();
 
 	const [submitting, setSubmitting] = useState(false);
@@ -76,22 +77,19 @@ const BookForm = ({ type, ...book }: BookFormProps) => {
 		label,
 		placeholder,
 	}: {
-		control: Control<
-			{
-				title: string;
-				description: string;
-				author: string;
-				genre: string;
-				rating: number;
-				totalCopies: number;
-				coverUrl: string;
-				videoUrl: string;
-				coverColor: string;
-				summary: string;
-			},
-			/*@ts-ignore */ any
-		>;
-		/*@ts-ignore */ fieldName: any;
+		control: Control<{
+			title: string;
+			description: string;
+			author: string;
+			genre: string;
+			rating: number;
+			totalCopies: number;
+			coverUrl: string;
+			videoUrl: string;
+			coverColor: string;
+			summary: string;
+		}>;
+		fieldName: TFieldNames;
 		label: string;
 		placeholder: string;
 	}) => {

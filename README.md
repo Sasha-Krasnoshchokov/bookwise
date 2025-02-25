@@ -1,3 +1,21 @@
+# **Demo**
+
+- [DEMO](https://bookwise-weld.vercel.app/)
+- [DEMO_ADMIN](https://bookwise-weld.vercel.app/admin)
+    
+**Admin features are only accessible to a user with the following credentials**
+
+**Email:**
+```
+  admin@admin.com
+```
+
+**Password:**
+```
+  test1234
+```
+#
+
 <div align="center">
   <div>
     <img src="https://img.shields.io/badge/-Next_JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000" alt="next.js" />
@@ -86,14 +104,9 @@ Built with Next.js, TypeScript, and Postgres, the Library Management System is a
 
 </details>
 
-## <a name="quick-start">🤸 Demo and Quick Start</a>
+## <a name="quick-start">🤸 Quick Start</a>
 
 Follow these steps to set up the project locally on your machine.
-
-**Demo**
-
-- [DEMO](https://bookwise-weld.vercel.app/)
-- [DEMO_ADMIN](https://bookwise-weld.vercel.app/admin)
 
 <details>
   <summary><code>Cloning, Installing, Running</code></summary>

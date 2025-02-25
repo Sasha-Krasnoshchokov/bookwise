@@ -2,9 +2,9 @@
   <div>
     <img src="https://img.shields.io/badge/-Next_JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000" alt="next.js" />
     <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
     <img src="https://img.shields.io/badge/-PostgreSQL-black?style=for-the-badge&logoColor=white&logo=postgresql&color=4169E1" alt="postgresql" />
     <img src="https://img.shields.io/badge/-Upstash-black?style=for-the-badge&logoColor=white&logo=upstash&color=00E9A3" alt="upstash" />
-    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
   </div>
 
   <h3 align="center">A Library Management System with Admin Panel</h3>
@@ -18,13 +18,13 @@ Built with Next.js, TypeScript, and Postgres, the Library Management System is a
 
 <details>
   <summary><code>Tech Stack</code></summary>
+  
   - Next.js
-- PostgreSQL
-- Upstash
-- ImageKit
-- TypeScript
-- Resend
-- Tailwind CSS
+  - TypeScript
+  - Tailwind CSS
+  - PostgreSQL
+  - Upstash
+  - ImageKit
 </details>
 
 ## <a name="features">🔋 Features</a>
@@ -46,9 +46,15 @@ Built with Next.js, TypeScript, and Postgres, the Library Management System is a
   
   ### **Admin features are only accessible to a user with the following credentials**
 
-  Email: **admin@admin.com**
+  **Email:**
+  ```
+    admin@admin.com
+  ```
   
-  Password: **test1234**
+  **Password:**
+  ```
+    test1234
+  ```
   
 👉 **Analytics Dashboard**: Statistics, new users, books, borrow requests, and more.  
 

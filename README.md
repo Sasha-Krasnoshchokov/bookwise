@@ -101,8 +101,8 @@ Follow these steps to set up the project locally on your machine.
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/Sasha-Krasnoshchokov/bookwise
-cd bookwise_dashboard
+git clone (https://github.com/Sasha-Krasnoshchokov/bookwise.git)
+cd bookwise
 ```
 
 **Installation**

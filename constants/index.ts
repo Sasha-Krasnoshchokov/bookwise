@@ -1,16 +1,11 @@
-export const navigationLinks = [
-  {
-    href: "/library",
-    label: "Library",
-  },
 
-  {
-    img: "/icons/user.svg",
-    selectedImg: "/icons/user-fill.svg",
-    href: "/my-profile",
-    label: "My Profile",
-  },
-];
+
+export const MAX_IMAGE_SIZE_MB = 10 * 1024 * 1024;
+export const MAX_VIDEO_SIZE_MB = 50 * 1024 * 1024;
+
+export const ONE_DAY_IN_MS = 24 * 60 * 60 * 1000;
+export const TREE_DAYS_IN_MS = 3 * ONE_DAY_IN_MS;
+export const THIRTY_DAYS_IN_MS = 10 * TREE_DAYS_IN_MS;
 
 export const adminSideBarLinks = [
   {
@@ -54,58 +49,3 @@ export const FIELD_TYPES = {
   universityId: "number",
   password: "password",
 };
-
-export const sorts = [
-  {
-    value: "oldest",
-    label: "Oldest",
-  },
-  {
-    value: "newest",
-    label: "Newest",
-  },
-  {
-    value: "available",
-    label: "Available",
-  },
-  {
-    value: "highestRated",
-    label: "Highest Rated",
-  },
-];
-
-export const userRoles = [
-  {
-    value: "user",
-    label: "User",
-    bgColor: "bg-[#FDF2FA]",
-    textColor: "text-[#C11574]",
-  },
-  {
-    value: "admin",
-    label: "Admin",
-    bgColor: "bg-[#ECFDF3]",
-    textColor: "text-[#027A48]",
-  },
-];
-
-export const borrowStatuses = [
-  {
-    value: "overdue",
-    label: "Overdue",
-    bgColor: "bg-[#FFF1F3]",
-    textColor: "text-[#C01048]",
-  },
-  {
-    value: "borrowed",
-    label: "Borrowed",
-    bgColor: "bg-[#F9F5FF]",
-    textColor: "text-[#6941C6]",
-  },
-  {
-    value: "returned",
-    label: "Returned",
-    bgColor: "bg-[#F0F9FF]",
-    textColor: "text-[#026AA2]",
-  },
-];

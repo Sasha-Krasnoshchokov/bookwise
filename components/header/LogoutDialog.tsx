@@ -38,9 +38,7 @@ const LogoutDialog = ({ triggerType = 'default' }: { triggerType?: 'default' | '
 				<DialogContent className='sm:max-w-md gap-10'>
 					<DialogHeader>
 						<DialogTitle>Are you shure you want to log out?</DialogTitle>
-						<DialogDescription>
-							{/* Anyone who has this link will be able to view this. */}
-						</DialogDescription>
+						<DialogDescription>{''}</DialogDescription>
 					</DialogHeader>
 					<DialogFooter>
 						<DialogClose asChild>

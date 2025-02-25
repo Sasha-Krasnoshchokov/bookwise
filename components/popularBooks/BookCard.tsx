@@ -2,7 +2,6 @@ import Link from 'next/link';
 import React from 'react';
 import BookCover from '../bookOverview/BookCover';
 import Image from 'next/image';
-// import { Button } from '../ui/button';
 
 const BookCard = ({ id, coverColor, coverUrl, title, genre, totalCopies }: SampleBook) => {
 	const isLoanedBook = !!totalCopies;
@@ -33,8 +32,6 @@ const BookCard = ({ id, coverColor, coverUrl, title, genre, totalCopies }: Sampl
 							/>
 							<p className='text-light-100 max-xs:text-xs'>11 days left to return</p>
 						</div>
-
-						{/* <Button className='book-btn text-dark-100 text-lg'>Download receipt</Button> */}
 					</div>
 				)}
 			</Link>

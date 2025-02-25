@@ -28,6 +28,8 @@ const MyProfile = async () => {
 			...currentBook,
 			borrowDate: book.borrowDate,
 			dueDate: book.dueDate,
+			returnDate: book.returnDate,
+			status: book.status,
 		};
 	});
 	const list = await Promise.all(listPromises);
@@ -51,6 +53,8 @@ const MyProfile = async () => {
 							genre={book.genre}
 							borrowDate={book.borrowDate}
 							dueDate={book.dueDate}
+							status={book.status}
+							returnDate={book.returnDate}
 						/>
 					))}
 				</ul>

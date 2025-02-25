@@ -68,3 +68,4 @@ type TFieldNames =
 
 type TUserStatus = 'PENDING' | 'APPROVED' | 'REJECTED' | null;
 type TUserRole = 'USER' | 'ADMIN' | null;
+type TBookStatus = 'AVAILABLE' | 'BORROWED' | 'RETURNED';

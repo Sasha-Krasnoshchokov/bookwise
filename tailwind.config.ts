@@ -68,6 +68,7 @@ export default {
         },
         red: {
           DEFAULT: "#EF3A4B",
+          warning: "#ff6c6f",
           400: "#F46F70",
           500: "#E27233",
           800: "#EF3A4B",

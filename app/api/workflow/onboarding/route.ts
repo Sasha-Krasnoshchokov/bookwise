@@ -1,3 +1,4 @@
+import { THIRTY_DAYS_IN_MS, TREE_DAYS_IN_MS } from "@/constants";
 import { db } from "@/database/drizzle";
 import { users } from "@/database/schema";
 
@@ -11,10 +12,6 @@ type InitialData = {
 }
 
 type UserState = "non-active" | "active"
-
-const ONE_DAY_IN_MS = 24 * 60 * 60 * 1000;
-const TREE_DAYS_IN_MS = 3 * ONE_DAY_IN_MS;
-const THIRTY_DAYS_IN_MS = 10 * TREE_DAYS_IN_MS;
 
 const getUserState = async (email: string): Promise<UserState> => {
   const user = await db.select().from(users).where(eq(users.email, email)).limit(1);

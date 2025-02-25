@@ -6,9 +6,8 @@ import { IKImage, ImageKitProvider, IKUpload, IKVideo } from 'imagekitio-next';
 import config from '@/lib/config';
 import Image from 'next/image';
 import { toast } from '@/hooks/use-toast';
+import { MAX_IMAGE_SIZE_MB, MAX_VIDEO_SIZE_MB } from '@/constants';
 
-const MAX_IMAGE_SIZE_MB = 10 * 1024 * 1024;
-const MAX_VIDEO_SIZE_MB = 50 * 1024 * 1024;
 const authenticator = async () => {
 	try {
 		const res = await fetch(`${config.env.apiEndpoint}/api/auth/imagekit`);

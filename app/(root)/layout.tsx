@@ -2,7 +2,7 @@ import { auth } from '@/authjs';
 import Header from '@/components/Header';
 import { db } from '@/database/drizzle';
 import { users } from '@/database/schema';
-import { getCurrentDate } from '@/lib/helpers';
+import { getCurrentDate } from '@/lib/utils';
 import { eq } from 'drizzle-orm';
 import { redirect } from 'next/navigation';
 import { after } from 'next/server';

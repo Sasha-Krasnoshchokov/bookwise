@@ -7,8 +7,6 @@ interface PopularBooksProps {
 	containerClassName?: string;
 }
 
-// const isLoanedBook = false;
-
 const BookList = ({ title, books, containerClassName = '' }: PopularBooksProps) => {
 	if (books.length === 0) {
 		return null;

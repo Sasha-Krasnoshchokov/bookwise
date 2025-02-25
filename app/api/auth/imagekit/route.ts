@@ -7,7 +7,8 @@ const imageKit = new ImageKit(config.env.imagekit);
 export async function GET() {
   try {
     return NextResponse.json(imageKit.getAuthenticationParameters());
-    //@ts-ignore
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     return new Response(error.message, { status: 500 });
   }

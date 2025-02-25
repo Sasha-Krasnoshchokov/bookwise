@@ -34,18 +34,13 @@
 Built with Next.js, TypeScript, and Postgres, the Library Management System is a production-grade platform featuring a public-facing app and an admin interface. It offers advanced functionalities such as registration process, seamless book borrowing with reminders, robust user management, and a modern, optimized tech stack for real-world scalability.
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
-
-<details>
-  <summary><code>Tech Stack</code></summary>
-  
   - Next.js
   - TypeScript
   - Tailwind CSS
-  - PostgreSQL
+  - [PostgreSQL + Neon](https://neon.tech/docs/introduction)
+  - [Upstash](https://upstash.com/docs/introduction) + [Drizzle ORM](https://orm.drizzle.team/docs/overview)
   - [shadcn/ui](https://ui.shadcn.com/)
-  - [Upstash](https://upstash.com/docs/introduction)
   - [ImageKit](https://imagekit.io/)
-</details>
 
 ## <a name="features">🔋 Features</a>
 

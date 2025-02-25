@@ -22,7 +22,8 @@
     <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="TypeScript" />
     <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
     <img src="https://img.shields.io/badge/-PostgreSQL-black?style=for-the-badge&logoColor=white&logo=postgresql&color=4169E1" alt="postgresql" />
-    <img alt="shadcn/ui" src="https://img.shields.io/badge/-Shadcn%2Fui-black?style=for-the-badge&logo=shadcn%2Fui&logoColor=050505k&color=gray">
+    <img alt="shadcn/ui" src="https://img.shields.io/badge/-Shadcn%2Fui-black?style=for-the-badge&logo=shadcn%2Fui&logoColor=fffk&color=050505">
+    <img alt="auth.js" src="https://img.shields.io/badge/-Auth.js-black?style=for-the-badge&logo=authdotjs&logoColor=whitek&color=89ef46">
     <img src="https://img.shields.io/badge/-Upstash-black?style=for-the-badge&logoColor=white&logo=upstash&color=00E9A3" alt="upstash" />
   </div>
 
@@ -37,6 +38,7 @@ Built with Next.js, TypeScript, and Postgres, the Library Management System is a
   - Next.js
   - TypeScript
   - Tailwind CSS
+  - Auth.js
   - [PostgreSQL + Neon](https://neon.tech/docs/introduction)
   - [Upstash](https://upstash.com/docs/introduction) + [Drizzle ORM](https://orm.drizzle.team/docs/overview)
   - [shadcn/ui](https://ui.shadcn.com/)

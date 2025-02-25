@@ -16,13 +16,16 @@ Built with Next.js, TypeScript, and Postgres, the Library Management System is a
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
-- Next.js
+<details>
+  <summary><code>Tech Stack</code></summary>
+  - Next.js
 - PostgreSQL
 - Upstash
 - ImageKit
 - TypeScript
 - Resend
 - Tailwind CSS
+</details>
 
 ## <a name="features">🔋 Features</a>
 
@@ -38,14 +41,15 @@ Built with Next.js, TypeScript, and Postgres, the Library Management System is a
 
 👉 **Onboarding Workflows**: Automated welcome emails when users sign up, with follow-ups based on inactivity or activity dates.
 
+<details>
+  <summary><code>Admin Features</code></summary>
   
   ### **Admin features are only accessible to a user with the following credentials**
 
-  Email: **admin@gmail.com**
+  Email: **admin@admin.com**
   
   Password: **test1234**
   
-<details>
 👉 **Analytics Dashboard**: Statistics, new users, books, borrow requests, and more.  
 
 👉 **All Users Page**: View and manage users, including approving or revoking access (in progress).  
@@ -57,7 +61,9 @@ Built with Next.js, TypeScript, and Postgres, the Library Management System is a
 👉 **Book Management Forms**: Add new books and edit existing entries.
 </details>
 
-### 
+<details>
+  <summary><code>General Features</code></summary>
+  
 👉 **Advanced Functionalities**: Caching, rate-limiting, DDoS protection, and custom notifications.  
 
 👉 **Database Management**: Postgres with Neon for scalable and collaborative database handling.  
@@ -72,6 +78,7 @@ Built with Next.js, TypeScript, and Postgres, the Library Management System is a
 
 👉 **Technology Stack**: Next.js with TypeScript for scalable development, and NextAuth for robust authentication.  
 
+</details>
 
 ## <a name="quick-start">🤸 Demo and Quick Start</a>
 
@@ -81,7 +88,10 @@ Follow these steps to set up the project locally on your machine.
 
 - [DEMO](https://bookwise-weld.vercel.app/)
 - [DEMO_ADMIN](https://bookwise-weld.vercel.app/admin)
-  
+
+<details>
+  <summary><code>Cloning, Installing, Running</code></summary>
+    
 **Cloning the Repository**
 
 ```bash
@@ -130,3 +140,5 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+
+</details>

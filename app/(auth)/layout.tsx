@@ -1,6 +1,6 @@
 import { auth } from '@/authjs';
 import Logo from '@/components/Logo';
-// import Image from 'next/image';
+import Image from 'next/image';
 import { redirect } from 'next/navigation';
 import React, { ReactNode } from 'react';
 
@@ -23,13 +23,13 @@ const AuthLayout = async ({ children }: { children: ReactNode }) => {
 			</section>
 
 			<section className='auth-illustration'>
-				{/* <Image
+				<Image
 					src='/images/auth-illustration_small.png'
 					alt='Auth Illustration'
 					className='size-full object-cover'
 					width={1000}
 					height={1000}
-				/> */}
+				/>
 			</section>
 		</main>
 	);

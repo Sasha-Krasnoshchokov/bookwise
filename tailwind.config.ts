@@ -102,6 +102,7 @@ export default {
       },
       screens: {
         xs: "480px",
+        md: "820px",
         xl: '1320px',
       },
       borderRadius: {

@@ -29,6 +29,7 @@ const AuthLayout = async ({ children }: { children: ReactNode }) => {
 					className='size-full object-cover'
 					width={1000}
 					height={1000}
+					priority
 				/>
 			</section>
 		</main>
